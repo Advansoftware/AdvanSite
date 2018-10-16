@@ -1,10 +1,4 @@
-    <?php $this->load->view('header');?>
-    <?php $this->load->view('servicos');?>
-    <?php $this->load->view('portifolio');?>
-    <?php $this->load->view('sobre');?>
-    <?php $this->load->view('equipe');?>
-    <?php $this->load->view('clientes');?>
-    <?php $this->load->view('contato');?>
+
    
    
    

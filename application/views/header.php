@@ -65,5 +65,6 @@
           <div class="intro-lead-in"><?php echo $frase;?></div>
           <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Mostrar Mais</a>
         </div>
-      </div>
+	  </div>
+
     </header>

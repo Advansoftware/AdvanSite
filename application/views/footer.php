@@ -35,6 +35,7 @@
     <!-- Plugin JavaScript -->
     <script src="content/js/jquery.easing.min.js"></script>
 
+
     <!-- Contact form JavaScript -->
     <script src="content/js/jqBootstrapValidation.js"></script>
     <script src="content/js/contact_me.js"></script>
