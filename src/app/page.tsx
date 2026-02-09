@@ -1,141 +1,140 @@
 'use client';
 
 import React from 'react';
-import { Box, Container, Stack, Typography, Button, Avatar, IconButton } from '@mui/material';
-
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import LanguageIcon from '@mui/icons-material/Language';
+import { Box, Container, Typography, Button, Card, CardContent, CardMedia, CardActions, Chip, Avatar, Stack } from '@mui/material';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import Link from 'next/link';
+import AdvanLogo from '@/components/AdvanLogo';
 
-// Placeholder for Logo if image generation fails, or use an Icon
-import CodeIcon from '@mui/icons-material/Code';
-
-export default function Home() {
-  const links = [
+export default function PortfolioHome() {
+  const projects = [
     {
-      title: 'Teste Grátis IPTV',
-      subtitle: 'Solicite seu teste agora mesmo',
-      icon: <PlayCircleOutlineIcon />,
-      href: '/testegratis', // Goes to our internal route which redirects to WA
-      color: 'linear-gradient(45deg, #FF3D00 30%, #FF9100 90%)',
+      title: 'Gastometria',
+      description: 'Plataforma de gestão de custos e receitas para restaurantes.',
+      image: '/portfolio/gastometria.png',
+      link: 'https://gastometria.com.br/',
+      tags: ['SaaS', 'Gestão', 'Web App'],
     },
     {
-      title: 'Suporte WhatsApp',
-      subtitle: 'Fale com nosso time',
-      icon: <WhatsAppIcon />,
-      href: 'https://wa.me/5535984216196',
-      color: 'linear-gradient(45deg, #00C853 30%, #69F0AE 90%)',
+      title: 'Respondia',
+      description: 'Solução de IA para atendimento automático e suporte.',
+      image: '/portfolio/respondia.png',
+      link: 'https://respondia.pro/',
+      tags: ['IA', 'Chatbot', 'Automacão'],
     },
     {
-      title: 'Nosso Site',
-      subtitle: 'Conheça nossos serviços',
-      icon: <LanguageIcon />,
-      href: 'https://advansoftware.shop', // Adjust if needed
-      color: 'linear-gradient(45deg, #2979FF 30%, #448AFF 90%)',
+      title: 'Prefeitura de Brazópolis',
+      description: 'Portal oficial da prefeitura municipal.',
+      image: '/portfolio/brazopolis.png',
+      link: 'https://brazopolis.mg.gov.br/',
+      tags: ['Governo', 'Portal', 'Institucional'],
     },
   ];
 
   return (
-    <Container maxWidth="sm" sx={{ minHeight: '100vh', py: 6 }}>
-      <Stack spacing={4} alignItems="center">
-        {/* Header Profile/Logo */}
-        <Stack spacing={2} alignItems="center" textAlign="center">
-          <Avatar
-            sx={{
-              width: 100,
-              height: 100,
-              background: 'linear-gradient(135deg, #6200ea 0%, #00b248 100%)',
-              boxShadow: '0 0 20px rgba(98, 0, 234, 0.5)',
+    <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      {/* Hero Section */}
+      <Box
+        sx={{
+          py: 10,
+          textAlign: 'center',
+          background: 'linear-gradient(180deg, rgba(98, 0, 234, 0.1) 0%, rgba(0,0,0,0) 100%)',
+        }}
+      >
+        <Container maxWidth="md">
+          <Box sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}>
+             <AdvanLogo size={80} />
+          </Box>
+          <Typography 
+            variant="h2" 
+            component="h1" 
+            fontWeight="800" 
+            gutterBottom
+            sx={{ 
+              fontSize: { xs: '2.5rem', md: '3.75rem' },
+              lineHeight: { xs: 1.2, md: 1.1 } 
             }}
           >
-            <CodeIcon sx={{ fontSize: 50, color: '#fff' }} />
-          </Avatar>
-          <Box>
-            <Typography variant="h4" fontWeight="bold" gutterBottom>
-              AdvanSoftware
-            </Typography>
-            <Typography variant="body1" color="text.secondary">
-              Soluções Digitais e Entretenimento
-            </Typography>
-          </Box>
-        </Stack>
+            Transformando ideias em software de <Box component="span" sx={{ color: 'secondary.main' }}>alto desempenho</Box>
+          </Typography>
+          <Typography variant="h5" color="text.secondary" paragraph sx={{ mb: 4 }}>
+            Somos especialistas em criar soluções digitais que impulsionam negócios. De portais governamentais a sistemas SaaS complexos.
+          </Typography>
+          <Button
+            component={Link}
+            href="/links"
+            variant="contained"
+            size="large"
+            endIcon={<ArrowForwardIcon />}
+            sx={{ borderRadius: 8, px: 4, py: 1.5, fontSize: '1.1rem' }}
+          >
+            Ver Nossos Serviços
+          </Button>
+        </Container>
+      </Box>
 
-        {/* Links Section */}
-        <Stack spacing={2} width="100%">
-          {links.map((link, index) => (
-            <Button
+      {/* Portfolio Section */}
+      <Container maxWidth="lg" sx={{ py: 8 }}>
+        <Typography variant="h4" fontWeight="bold" gutterBottom sx={{ mb: 6, textAlign: 'center' }}>
+          Junte-se a quem confia na AdvanSoftware
+        </Typography>
+        
+        {/* Responsive Grid using CSS Grid */}
+        <Box sx={{ 
+          display: 'grid', 
+          gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' },
+          gap: 4, 
+          width: '100%'
+        }}>
+          {projects.map((project, index) => (
+            <Box 
               key={index}
-              component={Link}
-              href={link.href}
-              variant="contained"
-              fullWidth
-              startIcon={link.icon}
-              sx={{
-                justifyContent: 'flex-start',
-                alignItems: 'center',
-                py: 2,
-                px: 3,
-                fontSize: '1rem',
-                background: 'rgba(255, 255, 255, 0.05)',
-                backdropFilter: 'blur(10px)',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
-                '&:hover': {
-                  background: 'rgba(255, 255, 255, 0.1)',
-                  transform: 'translateY(-2px)',
-                  boxShadow: '0 6px 20px rgba(0,0,0,0.3)',
-                },
-                transition: 'all 0.3s ease',
-                position: 'relative',
-                overflow: 'hidden',
-                '&::before': {
-                  content: '""',
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  width: '4px',
-                  height: '100%',
-                  background: link.color,
-                },
+              sx={{ 
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column'
               }}
             >
-              <Box sx={{ textAlign: 'left', ml: 1 }}>
-                <Typography variant="body1" fontWeight="600" lineHeight={1.2}>
-                  {link.title}
-                </Typography>
-                {link.subtitle && (
-                  <Typography variant="caption" color="text.secondary" sx={{ display: 'block' }}>
-                    {link.subtitle}
+              <Card sx={{ 
+                height: '100%', 
+                display: 'flex', 
+                flexDirection: 'column',
+                transition: 'transform 0.3s ease-in-out',
+                '&:hover': {
+                  transform: 'translateY(-8px)',
+                  boxShadow: '0 12px 30px rgba(0,0,0,0.5)'
+                }
+              }}>
+                <CardMedia
+                  component="img"
+                  height="200"
+                  image={project.image}
+                  alt={project.title}
+                  sx={{ objectFit: 'cover', objectPosition: 'top' }}
+                />
+                <CardContent sx={{ flexGrow: 1 }}>
+                  <Typography gutterBottom variant="h5" component="div" fontWeight="bold">
+                    {project.title}
                   </Typography>
-                )}
-              </Box>
-            </Button>
+                  <Box sx={{ mb: 2, display: 'flex', gap: 1, flexWrap: 'wrap' }}>
+                    {project.tags.map((tag) => (
+                      <Chip key={tag} label={tag} size="small" variant="outlined" color="primary" />
+                    ))}
+                  </Box>
+                  <Typography variant="body2" color="text.secondary">
+                    {project.description}
+                  </Typography>
+                </CardContent>
+                <CardActions sx={{ p: 2, pt: 0 }}>
+                  <Button size="small" href={project.link} target="_blank" endIcon={<ArrowForwardIcon />}>
+                    Visitar Projeto
+                  </Button>
+                </CardActions>
+              </Card>
+            </Box>
           ))}
-        </Stack>
-
-        {/* Social / Footer */}
-        <Stack direction="row" spacing={2} mt={4}>
-          <IconButton
-            href="https://instagram.com/advansoftware" // Example
-            target="_blank"
-            sx={{ color: 'white', '&:hover': { color: '#E1306C' } }}
-          >
-            <InstagramIcon />
-          </IconButton>
-          <IconButton
-             href="https://wa.me/5535984216196"
-             target="_blank"
-             sx={{ color: 'white', '&:hover': { color: '#25D366' } }}
-          >
-            <WhatsAppIcon />
-          </IconButton>
-        </Stack>
-
-        <Typography variant="caption" color="text.secondary" mt={4}>
-          © 2026 AdvanSoftware. Todos os direitos reservados.
-        </Typography>
-      </Stack>
-    </Container>
+        </Box>
+      </Container>
+    </Box>
   );
 }

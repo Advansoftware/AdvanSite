@@ -20,9 +20,9 @@ const theme = createTheme({
       paper: '#1e1e1e',
     },
     primary: {
-      main: '#6200ea', // Deep Purple
-      light: '#9d46ff',
-      dark: '#0a00b6',
+      main: '#9F65FF', // Lighter Purple for better contrast on dark
+      light: '#B388FF',
+      dark: '#6200EA', // The original deep purple is now 'dark'
       contrastText: '#ffffff',
     },
     secondary: {
@@ -31,6 +31,10 @@ const theme = createTheme({
       dark: '#00b248',
       contrastText: '#000000',
     },
+    text: {
+      primary: '#ffffff',
+      secondary: '#b0b0b0',
+    }
   },
   components: {
     MuiButton: {
@@ -44,7 +48,7 @@ const theme = createTheme({
           boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
         },
         containedPrimary: {
-          background: 'linear-gradient(45deg, #6200ea 30%, #9d46ff 90%)',
+          background: 'linear-gradient(45deg, #6200EA 30%, #9F65FF 90%)', // Use deep to light gradient
         },
       },
     },
@@ -58,6 +62,14 @@ const theme = createTheme({
         },
       },
     },
+    MuiChip: {
+      styleOverrides: {
+        outlinedPrimary: {
+          borderColor: '#9F65FF',
+          color: '#9F65FF', // Ensure text is the lighter purple
+        }
+      }
+    }
   },
 });
 
