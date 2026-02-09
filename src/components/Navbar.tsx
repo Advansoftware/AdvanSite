@@ -20,28 +20,33 @@ export default function Navbar() {
             href="/"
             sx={{
               mr: 2,
-              display: { xs: 'flex', md: 'flex' },
+              display: { xs: 'none', md: 'flex' },
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.1rem',
               color: 'inherit',
               textDecoration: 'none',
-              flexGrow: 1,
+              flexShrink: 0, // Prevent shrinking
             }}
           >
             AdvanSoftware
           </Typography>
-
-          <Box sx={{ display: 'flex', gap: 2 }}>
-            <Button component={Link} href="/" sx={{ color: 'white' }}>
-              Portfolio
-            </Button>
-            <Button component={Link} href="/links" sx={{ color: 'white' }}>
-              Links/Portal
-            </Button>
-             <Button component={Link} href="https://wa.me/5535984216196" target="_blank" variant="outlined" color="primary" sx={{ borderRadius: 4 }}>
-              Contato
-            </Button>
+          <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1, ml: { xs: 0, md: 4 }, justifyContent: { xs: 'normal', md: 'flex-end' }, gap: { xs: 0, md: 2 } }}>
+            <Box sx={{ width: { xs: '25%', md: 'auto' } }}>
+              <Button component={Link} href="/" sx={{ color: 'white' }}>
+                Portfolio
+              </Button>
+            </Box>
+            <Box sx={{ width: { xs: '41.666%', md: 'auto' }, textAlign: { xs: 'center', md: 'inherit' } }}>
+              <Button component={Link} href="/links" sx={{ color: 'white' }}>
+                Links/Portal
+              </Button>
+            </Box>
+            <Box sx={{ width: { xs: '33.333%', md: 'auto' }, textAlign: { xs: 'right', md: 'inherit' } }}>
+              <Button component={Link} href="https://wa.me/5535984216196" target="_blank" variant="outlined" color="primary" sx={{ borderRadius: 4 }}>
+                Contato
+              </Button>
+            </Box>
           </Box>
         </Toolbar>
       </Container>
