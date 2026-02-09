@@ -41,16 +41,17 @@ export default function Home() {
       <Stack spacing={4} alignItems="center">
         {/* Header Profile/Logo */}
         <Stack spacing={2} alignItems="center" textAlign="center">
-          <Avatar
+          <Box
             sx={{
               width: 100,
               height: 100,
-              bgcolor: 'transparent',
-              boxShadow: 'none',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
             }}
           >
             <AdvanLogo size={100} />
-          </Avatar>
+          </Box>
           <Box>
             <Typography variant="h4" fontWeight="bold" gutterBottom>
               AdvanSoftware
@@ -123,9 +124,9 @@ export default function Home() {
             <InstagramIcon />
           </IconButton>
           <IconButton
-             href="https://wa.me/5535984216196"
-             target="_blank"
-             sx={{ color: 'white', '&:hover': { color: '#25D366' } }}
+            href="https://wa.me/5535984216196"
+            target="_blank"
+            sx={{ color: 'white', '&:hover': { color: '#25D366' } }}
           >
             <WhatsAppIcon />
           </IconButton>
