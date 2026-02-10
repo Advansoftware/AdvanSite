@@ -1,0 +1,22 @@
+{
+  "name": "AdvanSoftware - Soluções em Software",
+  "short_name": "AdvanSoftware",
+  "description": "Desenvolvimento de software sob medida. SaaS, automação, chatbots e modernização de sistemas.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#9F65FF",
+  "icons": [
+    {
+      "src": "/logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
