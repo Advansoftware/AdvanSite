@@ -14,7 +14,7 @@ import AdvanLogo from '@/components/AdvanLogo';
 export default function Home() {
   const links = [
     {
-      title: 'Teste Premium Grátis',
+      title: 'Teste Grátis',
       subtitle: 'Solicite seu teste agora mesmo',
       icon: <PlayCircleOutlineIcon />,
       href: '/testegratis', // Goes to our internal route which redirects to WA
