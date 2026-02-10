@@ -10,7 +10,7 @@ export default function PortfolioHome() {
   const projects = [
     {
       title: 'Gastometria',
-      description: 'Plataforma de gestão de custos e receitas para restaurantes.',
+      description: 'Plataforma de gestão financeira completa.',
       image: '/portfolio/gastometria.png',
       link: 'https://gastometria.com.br/',
       tags: ['SaaS', 'Gestão', 'Web App'],
@@ -20,7 +20,7 @@ export default function PortfolioHome() {
       description: 'Solução de IA para atendimento automático e suporte.',
       image: '/portfolio/respondia.png',
       link: 'https://respondia.pro/',
-      tags: ['IA', 'Chatbot', 'Automacão'],
+      tags: ['IA', 'Chatbot', 'Automação'],
     },
     {
       title: 'Prefeitura de Brazópolis',
@@ -43,16 +43,16 @@ export default function PortfolioHome() {
       >
         <Container maxWidth="md">
           <Box sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}>
-             <AdvanLogo size={80} />
+            <AdvanLogo size={80} />
           </Box>
-          <Typography 
-            variant="h2" 
-            component="h1" 
-            fontWeight="800" 
+          <Typography
+            variant="h2"
+            component="h1"
+            fontWeight="800"
             gutterBottom
-            sx={{ 
+            sx={{
               fontSize: { xs: '2.5rem', md: '3.75rem' },
-              lineHeight: { xs: 1.2, md: 1.1 } 
+              lineHeight: { xs: 1.2, md: 1.1 }
             }}
           >
             Transformando ideias em software de <Box component="span" sx={{ color: 'secondary.main' }}>alto desempenho</Box>
@@ -62,7 +62,7 @@ export default function PortfolioHome() {
           </Typography>
           <Button
             component={Link}
-            href="/links"
+            href="/servicos"
             variant="contained"
             size="large"
             endIcon={<ArrowForwardIcon />}
@@ -78,26 +78,26 @@ export default function PortfolioHome() {
         <Typography variant="h4" fontWeight="bold" gutterBottom sx={{ mb: 6, textAlign: 'center' }}>
           Junte-se a quem confia na AdvanSoftware
         </Typography>
-        
+
         {/* Responsive Grid using CSS Grid */}
-        <Box sx={{ 
-          display: 'grid', 
+        <Box sx={{
+          display: 'grid',
           gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' },
-          gap: 4, 
+          gap: 4,
           width: '100%'
         }}>
           {projects.map((project, index) => (
-            <Box 
+            <Box
               key={index}
-              sx={{ 
+              sx={{
                 height: '100%',
                 display: 'flex',
                 flexDirection: 'column'
               }}
             >
-              <Card sx={{ 
-                height: '100%', 
-                display: 'flex', 
+              <Card sx={{
+                height: '100%',
+                display: 'flex',
                 flexDirection: 'column',
                 transition: 'transform 0.3s ease-in-out',
                 '&:hover': {
