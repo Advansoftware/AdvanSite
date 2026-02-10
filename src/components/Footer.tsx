@@ -91,7 +91,7 @@ export default function Footer() {
                 <InstagramIcon />
               </IconButton>
               <IconButton
-                href="mailto:contato@advansoftware.com.br"
+                href="mailto:siteadvansoftware@gmail.com"
                 size="small"
                 sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}
                 aria-label="E-mail"
