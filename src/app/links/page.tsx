@@ -57,7 +57,7 @@ export default function Home() {
               AdvanSoftware
             </Typography>
             <Typography variant="body1" color="text.secondary">
-              Soluções Digitais e Streaming
+              Soluções Digitais
             </Typography>
           </Box>
         </Stack>

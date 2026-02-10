@@ -5,7 +5,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'AdvanSoftware',
-  description: 'Soluções em Software e Streaming',
+  description: 'Soluções em Software',
 };
 
 export default function RootLayout({
