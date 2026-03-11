@@ -18,13 +18,6 @@ import AdvanLogo from '@/components/AdvanLogo';
 
 const projects = [
   {
-    title: 'AllInOne Converter',
-    description: 'Sistema open source de conversão de mídia com microserviços, suporte a torrents, downloads de URLs e streaming HLS.',
-    image: '/portfolio/allinone-converter.png',
-    link: '/projetos/allinone-converter',
-    tags: ['Open Source', 'Microserviços', 'Docker', 'Conversão de Mídia'],
-  },
-  {
     title: 'Gastometria',
     description: 'Plataforma de gestão financeira completa.',
     image: '/portfolio/gastometria.png',
@@ -44,6 +37,13 @@ const projects = [
     image: '/portfolio/brazopolis.png',
     link: 'https://brazopolis.mg.gov.br/',
     tags: ['Governo', 'Portal', 'Institucional'],
+  },
+  {
+    title: 'AllInOne Converter',
+    description: 'Sistema open source de conversão de mídia com microserviços, suporte a torrents, downloads de URLs e streaming HLS.',
+    image: '/portfolio/allinone-converter.png',
+    link: '/projetos/allinone-converter',
+    tags: ['Open Source', 'Microserviços', 'Docker', 'Conversão de Mídia'],
   },
 ];
 

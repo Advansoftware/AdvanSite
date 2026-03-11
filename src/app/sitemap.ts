@@ -6,21 +6,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: BASE_URL,
-      lastModified: new Date(),
+      lastModified: '2026-03-11',
       changeFrequency: 'monthly',
       priority: 1,
     },
     {
       url: `${BASE_URL}/servicos`,
-      lastModified: new Date(),
+      lastModified: '2026-03-11',
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
-      url: `${BASE_URL}/links`,
-      lastModified: new Date(),
+      url: `${BASE_URL}/projetos/allinone-converter`,
+      lastModified: '2026-03-11',
       changeFrequency: 'monthly',
-      priority: 0.7,
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/links`,
+      lastModified: '2026-03-01',
+      changeFrequency: 'monthly',
+      priority: 0.5,
     },
   ];
 }

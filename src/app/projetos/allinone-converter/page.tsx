@@ -17,7 +17,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import Link from 'next/link';
-import type { Metadata } from 'next';
+import { BreadcrumbJsonLd, SoftwareApplicationJsonLd } from '@/components/JsonLd';
 
 const screenshots = [
   { src: '/portfolio/allinone-converter/screenshot-dashboard.png', label: 'Dashboard Principal' },
@@ -94,6 +94,12 @@ export default function AllInOneConverterPage() {
 
   return (
     <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <BreadcrumbJsonLd items={[
+        { name: 'AdvanSoftware', url: 'https://advansoftware.com.br' },
+        { name: 'Projetos', url: 'https://advansoftware.com.br/projetos' },
+        { name: 'AllInOne Converter', url: 'https://advansoftware.com.br/projetos/allinone-converter' },
+      ]} />
+      <SoftwareApplicationJsonLd />
 
       {/* ═══════════════════ HERO ═══════════════════ */}
       <Box
@@ -120,10 +126,10 @@ export default function AllInOneConverterPage() {
               src="/portfolio/allinone-converter/logo.png"
               alt="AllInOne Converter Logo"
               sx={{
-                width: { xs: 80, md: 100 },
-                height: { xs: 80, md: 100 },
-                borderRadius: 3,
-                border: '2px solid rgba(255,255,255,0.1)',
+                width: { xs: 140, md: 180 },
+                height: 'auto',
+                objectFit: 'contain',
+                filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.3))',
               }}
             />
             <Box sx={{ flex: 1 }}>

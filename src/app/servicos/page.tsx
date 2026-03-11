@@ -14,6 +14,7 @@ import {
   Storage as DbIcon
 } from '@mui/icons-material';
 import Link from 'next/link';
+import { BreadcrumbJsonLd } from '@/components/JsonLd';
 
 export default function ServicesPage() {
   const services = [
@@ -69,6 +70,10 @@ export default function ServicesPage() {
 
   return (
     <Box sx={{ pb: 8 }}>
+      <BreadcrumbJsonLd items={[
+        { name: 'AdvanSoftware', url: 'https://advansoftware.com.br' },
+        { name: 'Serviços', url: 'https://advansoftware.com.br/servicos' },
+      ]} />
       {/* Hero Section */}
       <Box sx={{
         pt: 15,
