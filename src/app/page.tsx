@@ -18,6 +18,13 @@ import AdvanLogo from '@/components/AdvanLogo';
 
 const projects = [
   {
+    title: 'AllInOne Converter',
+    description: 'Sistema open source de conversão de mídia com microserviços, suporte a torrents, downloads de URLs e streaming HLS.',
+    image: '/portfolio/allinone-converter.png',
+    link: '/projetos/allinone-converter',
+    tags: ['Open Source', 'Microserviços', 'Docker', 'Conversão de Mídia'],
+  },
+  {
     title: 'Gastometria',
     description: 'Plataforma de gestão financeira completa.',
     image: '/portfolio/gastometria.png',
@@ -243,7 +250,14 @@ export default function PortfolioHome() {
                     </Typography>
                   </CardContent>
                   <CardActions sx={{ p: 2, pt: 0 }}>
-                    <Button size="small" href={project.link} target="_blank" endIcon={<ArrowForwardIcon />}>
+                    <Button
+                      size="small"
+                      {...(project.link.startsWith('/')
+                        ? { component: Link, href: project.link }
+                        : { href: project.link, target: '_blank' }
+                      )}
+                      endIcon={<ArrowForwardIcon />}
+                    >
                       Visitar Projeto
                     </Button>
                   </CardActions>
